@@ -1,0 +1,119 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // padding: 2rem;
+  max-width: 120rem; //container can decrease if there is no enough space i.e 1200px
+  margin: 1rem auto;
+  background-color: #fbfcfc;
+  box-shadow: var(--shadow-dark);
+  min-height: 50rem;
+  border-radius: 1rem;
+}
+
+.question {
+  padding: 2rem;
+  font-family: inherit;
+  font-size: 1.5rem;
+  background-color: var(--color-grey-light-2);
+  border: none;
+  color: inherit;
+  border-radius: 2rem;
+  width: 85%;
+  transition: all 0.2s;
+  margin-right: -3.25rem;
+  &:focus {
+    outline: none;
+    width: 90%;
+    background-color: var(--color-grey-light-3);
+    box-shadow: var(--shadow-dark);
+  }
+  &::-webkit-input-placeholder {
+    font-weight: 100;
+    color: var(--color-grey-light-4);
+  }
+}
+
+.heading-secondary {
+  text-align: center;
+  display: block;
+  padding: 1rem;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 4rem;
+}
+
+.btn {
+  margin-top: 5rem;
+  font-size: 1.5rem;
+  border: none;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  & > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all 0.5s;
+  }
+  &__visible {
+    padding: 2rem 7.5rem;
+  }
+  &__invisible {
+    position: absolute;
+    padding: 2rem 0;
+    left: 0;
+    top: -100%;
+  }
+  &:hover {
+    background-image: linear-gradient(
+      to left,
+      var(--color-primary-light),
+      var(--color-primary-dark)
+    );
+  }
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+  &:hover &__invisible {
+    top: 0;
+  }
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+
+  &:hover {
+    text-shadow: 0.5rem 1rem 2rem rgba(black, 0.2);
+  }
+}
+
+.u-center-text {
+  text-align: center !important;
+}

@@ -1,0 +1,115 @@
+form {
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: space-around;
+  // padding: 2rem;
+  max-width: 50rem; //container can decrease if there is no enough space i.e 1200px
+  margin: 1rem auto;
+  background-color: #fbfcfc;
+  box-shadow: var(--shadow-dark);
+  min-height: 58rem;
+  border-radius: 1rem;
+  padding: 10rem 5rem;
+}
+
+.login {
+  text-align: center;
+}
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: capitalize;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+
+  &:hover {
+    text-shadow: 0.5rem 1rem 2rem rgba(black, 0.2);
+  }
+}
+
+.u-center-text {
+  text-align: center !important;
+}
+
+.logo {
+  height: 10rem;
+}
+
+.heading-tertiary {
+  display: grid;
+  padding: 0;
+  margin: 0;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-column-gap: 1rem;
+  grid-column: 1 / -1;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  &::before,
+  &::after {
+    content: '';
+    height: 1px;
+    display: block;
+    background-color: currentColor;
+  }
+}
+
+.btn {
+  margin-top: 5rem;
+  font-size: 1.5rem;
+  border: none;
+  font-weight: 300;
+  text-transform: none;
+  border-radius: 100px;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  & > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all 0.5s;
+  }
+  &__visible {
+    padding: 2rem 6.5rem;
+  }
+  &__invisible {
+    position: absolute;
+    padding: 2rem 0;
+    left: 0;
+    top: -100%;
+  }
+  &:hover {
+    background-image: linear-gradient(
+      to left,
+      var(--color-primary-light),
+      var(--color-primary-dark)
+    );
+  }
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+  &:hover &__invisible {
+    top: 0;
+  }
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}

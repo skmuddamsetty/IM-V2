@@ -1,0 +1,12 @@
+<div class="u-center-text u-margin-bottom-big">
+  <h2 class="heading-secondary">
+    Post Question
+  </h2>
+</div>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <textarea name="question" id="question" class="question" cols="30" rows="10" placeholder="Question" ngModel required></textarea>
+  <button class="btn" type="submit" [disabled]="f.invalid">
+    <span class="btn__visible">Post Question</span>
+    <span class="btn__invisible">Submit</span>
+  </button>
+</form>

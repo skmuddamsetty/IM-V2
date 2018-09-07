@@ -1,0 +1,36 @@
+<div class="u-center-text u-margin-bottom-big">
+  <h2 class="heading-secondary">
+    Questions
+  </h2>
+</div>
+<div class="u-center-text u-margin-bottom-big">
+  <mat-form-field class="filter_div">
+    <input matInput class="filter" type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter" />
+  </mat-form-field>
+</div>
+<mat-paginator [length]="100" [pageSize]="5" [pageSizeOptions]="[1, 5, 10, 25, 100]">
+</mat-paginator>
+<div class="container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef class="table__heading" mat-sort-header> Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.date | date}} </td>
+    </ng-container>
+    <ng-container matColumnDef="question">
+      <th mat-header-cell *matHeaderCellDef class="table__heading" mat-sort-header> Question </th>
+      <td mat-cell *matCellDef="let element" class="table_question"> {{element.question}} </td>
+    </ng-container>
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef class="action table__heading"> Action </th>
+      <td mat-cell *matCellDef="let element" class="action">
+        <button class="btn" type="button">
+          <span class="btn__visible">View Answers</span>
+          <span class="btn__invisible">View Answers</span>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
